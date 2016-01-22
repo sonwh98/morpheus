@@ -1,4 +1,5 @@
-(ns com.kaicode.morpheus.transform)
+(ns com.kaicode.morpheus.transform
+  (:require [com.kaicode.morpheus.matrix :as matrix]))
 
 (defn skew-x [x]
   [ [1 (js/Math.tan x) 0]
@@ -12,8 +13,8 @@
    [0 0 1]])
 
 (defn skew [x y]
-  (multiply (skew-x x)
-            (skew-y y)))
+  (matrix/multiply (skew-x x)
+                   (skew-y y)))
 
 (defn rotate [theta]
   [ [(js/Math.cos theta) (- (js/Math.sin theta)) 0]
@@ -31,8 +32,8 @@
    [0 0 1]])
 
 (defn translate [x y]
-  (multiply (translate-x x)
-            (translate-y y)))
+  (matrix/multiply (translate-x x)
+                   (translate-y y)))
 
 (defn scale-x [factor]
   [[factor 0 0]
@@ -45,5 +46,5 @@
    [0 0 1]])
 
 (defn scale [factor]
-  (multiply (scale-x factor)
-            (scale-y factor)))
+  (matrix/multiply (scale-x factor)
+                   (scale-y factor)))
