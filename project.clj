@@ -1,2 +1,2 @@
-(defproject  neo-matrix "0.1.3-SNAPSHOT"
+(defproject  com.kaicode/morpheus "0.1.1-SNAPSHOT"
   :source-paths ["src"])

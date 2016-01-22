@@ -1,4 +1,4 @@
-(ns neo-matrix.core)
+(ns com.kaicode.morpheus)
 
 (defonce zero-vector [0 0 0])
 (defonce zero-matrix [zero-vector
